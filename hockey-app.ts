@@ -8,8 +8,8 @@ export class HockeyApp {
   private iosAppId:string = "7ea7b82b9b6e4366a8c8dd57e07b2743";
   private sendAutoUpdates = false;
   private ignoreErrorHeader = false;
-  private loginMode = window['hockeyapp'].ANONYMOUS;
-  private androidAppSecret = ''; //if  loginMode is email only. iOS only works with anonymous
+  //private loginMode = window['hockeyapp'].ANONYMOUS;
+  //private androidAppSecret = ''; //if  loginMode is email only. iOS only works with anonymous
 
   constructor(private platform:Platform) {}
 
@@ -32,7 +32,7 @@ export class HockeyApp {
         appId = this.androidAppId;
       }
       if (appId) {
-        window['hockeyapp'].start(null, null, appId);
+        window['hockeyapp'].start(null, null, appId, this.sendAutoUpdates, this.ignoreErrorHeader);
       }
     }
 
