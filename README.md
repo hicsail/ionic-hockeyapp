@@ -13,7 +13,7 @@ This is an ionic wrapper of the [cordova-plugin-hockeyapp](https://github.com/bi
 - [License](#license)
 
 ## Supported Ionic Platforms
-Ionic 2 is fully supported later, the last version of Ionic that was tested on was: `Ionic 3.0.1`
+Ionic 2 & 3 is fully supported, the last version of Ionic that was tested on was: `Ionic 3.0.1`
 
 ## Getting Started
 After you've created your [HockeyApp](http://hockeyapp.net/) account, and registered your app with the service, you can begin integrating into your ionic application.
