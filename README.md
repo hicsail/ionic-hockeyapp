@@ -1,6 +1,6 @@
 # Ionic-HockeyApp
-Need HockeyApp in your ionic application, add this package!
-This is an ionic wrapper of the [cordova-plugin-hockeyapp](https://github.com/bitstadium/HockeySDK-Cordova) to make it easier to add [HockeyApp](http://hockeyapp.net/) into your ionic application.
+Need HockeyApp in your Ionic application, add this package!
+This is an Ionic wrapper of the [cordova-plugin-hockeyapp](https://github.com/bitstadium/HockeySDK-Cordova) to make it easier to add [HockeyApp](http://hockeyapp.net/) into your Ionic application.
 
 [![NPM](https://nodei.co/npm/ionic-hockeyapp.png)](https://npmjs.org/package/ionic-hockeyapp)
 
@@ -13,54 +13,26 @@ This is an ionic wrapper of the [cordova-plugin-hockeyapp](https://github.com/bi
 - [License](#license)
 
 ## Supported Ionic Platforms
-Ionic 2 & 3 is fully supported, the last version of Ionic that was tested on was: `Ionic 3.0.1`
+Ionic 2 & 3 are fully supported, the latest version of Ionic that was tested is v3.0.1.
 
 ## Getting Started
-After you've created your [HockeyApp](http://hockeyapp.net/) account, and registered your app with the service, you can begin integrating into your ionic application.
+Start by creating a [HockeyApp account](http://hockeyapp.net/) and register your app with the service.
 
 ### Install the official [HockeyApp plugin](https://github.com/bitstadium/HockeySDK-Cordova) by running this command:
 ```bash
-ionic plugin add cordova-plugin-hockeyapp@latest
-```
-
-### Add cordova-plugin-hockeyapp to package.json and confix.xml.
-package.json
-```json
-"cordovaPlugins": [
-  "cordova-plugin-whitelist",
-  "cordova-plugin-statusbar",
-  "cordova-plugin-device",
-  "cordova-plugin-console",
-  "cordova-plugin-splashscreen",
-  "ionic-plugin-keyboard",
-  "cordova-plugin-hockeyapp"
-]
-```
-
-config.xml
-```xml
-<plugin name="ionic-plugin-keyboard" spec="~2.2.1" />
-<plugin name="cordova-plugin-whitelist" spec="1.3.1" />
-<plugin name="cordova-plugin-console" spec="1.0.5" />
-<plugin name="cordova-plugin-statusbar" spec="2.2.1" />
-<plugin name="cordova-plugin-device" spec="1.1.4" />
-<plugin name="cordova-plugin-splashscreen" spec="~4.0.1" />
-<plugin name="cordova-plugin-hockeyapp" spec="~2.2.3" />
+ionic plugin add cordova-plugin-hockeyapp@latest --save
 ```
 
 ### install ionic-hockeyapp
 ```bash
-npm install ionic-hockeyapp
+npm install ionic-hockeyapp --save
 ```
 
-### Add the HockeyApp provider to your app.modules.ts
+### Add the HockeyApp provider to app.module.ts
 ```ts
 import { HockeyApp } from "ionic-hockeyapp";
 
 providers: [
-  StatusBar,
-  SplashScreen,
-  {provide: ErrorHandler, useClass: IonicErrorHandler},
   HockeyApp
 ]
 ```
@@ -83,11 +55,11 @@ constructor(..., private hockeyApp:HockeyApp) {
 ```
 
 ## Example
-Check out the example ionic application in the [example folder](https://github.com/hicsail/ionic-hockeyapp/tree/master/example)
+Check out the example Ionic application in the [example folder](https://github.com/hicsail/ionic-hockeyapp/tree/master/example).
 
 Android Screenshot | iOS Screenshot
 :-------------------------:|:-------------------------:
-![android screenshot](https://github.com/hicsail/ionic-hockeyapp/blob/master/images/android%20screenshot.png)  |  ![ios screenshot](https://github.com/hicsail/ionic-hockeyapp/blob/master/images/ios%20screenshot.png)
+![android screenshot](https://cloud.githubusercontent.com/assets/864507/25199180/eb55e0f4-2517-11e7-9c34-c720004532eb.png)  |  ![ios screenshot](https://cloud.githubusercontent.com/assets/864507/25199222/0fc8a110-2518-11e7-9d6a-b48cdab500e7.png)
 
 ## API Reference
 Read the [Cordova HockeyApp API Reference](https://github.com/bitstadium/HockeySDK-Cordova#api-reference) for official documentation.
@@ -97,7 +69,7 @@ Want to make an improvement, fork this repo and submit a pull request!
 
 Possible enhancements:
 - Update HockeyApp start command to add Login Mode.
-- Make is promise based, get back Cordova success and failure.
+- Make library promise based.
 
 ## License
 
