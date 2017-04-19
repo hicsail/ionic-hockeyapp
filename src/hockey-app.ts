@@ -4,11 +4,13 @@ import { Platform } from "ionic-angular";
 @Injectable()
 export class HockeyApp {
 
+  //hockeyapp settings
   private androidAppId:string = "9e49aeddaa96488891f0a46b52b27618";
   private iosAppId:string = "7ea7b82b9b6e4366a8c8dd57e07b2743";
   private sendAutoUpdates = false;
   private ignoreErrorHeader = false;
-  //private loginMode = window['hockeyapp'].ANONYMOUS;
+  private window:any = window;
+  //private loginMode = this.window[<any>'hockeyapp'].ANONYMOUS;
   //private androidAppSecret = ''; //if  loginMode is email only. iOS only works with anonymous
 
   constructor(private platform:Platform) {}
@@ -23,8 +25,8 @@ export class HockeyApp {
    * @param appSecret             The app secret as provided by the HockeyApp portal. This parameter only needs to be set if you're setting the loginMode parameter to EMAIL_ONLY.
    */
   public start() {
-    if (window['hockeyapp']) {
-      let appId;
+    if (this.window[<any>'hockeyapp']) {
+      let appId:string;
       if (this.platform.is('ios')) {
         appId = this.iosAppId;
       }
@@ -32,7 +34,7 @@ export class HockeyApp {
         appId = this.androidAppId;
       }
       if (appId) {
-        window['hockeyapp'].start(null, null, appId, this.sendAutoUpdates, this.ignoreErrorHeader);
+        this.window[<any>'hockeyapp'].start(null, null, appId, this.sendAutoUpdates, this.ignoreErrorHeader);
       }
     }
 
@@ -43,8 +45,8 @@ export class HockeyApp {
    * @param name          The name (e.g. "ITEM_ADDED") of the custom event that should be logged.
    */
   public trackEvent(name:String): void {
-    if (window['hockeyapp']) {
-      window['hockeyapp'].trackEvent(null, null, name);
+    if (this.window[<any>'hockeyapp']) {
+      this.window[<any>'hockeyapp'].trackEvent(null, null, name);
     }
   }
 
@@ -52,8 +54,8 @@ export class HockeyApp {
    * Check if there is a new version available to download. NOTE: This should not be called in production/release builds intended for the Google Play Store.
    */
   public checkHockeyAppUpdates(): void {
-    if (window['hockeyapp']) {
-      window['hockeyapp'].checkForUpdate(null,null);
+    if (this.window[<any>'hockeyapp']) {
+      this.window[<any>'hockeyapp'].checkForUpdate(null,null);
     }
   }
 
@@ -61,8 +63,8 @@ export class HockeyApp {
    * Immediately crashes the app. This is used strictly for testing the HockeyApp crash reporting capabilities.
    */
   public forceCrash(): void {
-    if (window['hockeyapp']) {
-      window['hockeyapp'].forceCrash(null,null);
+    if (this.window[<any>'hockeyapp']) {
+      this.window[<any>'hockeyapp'].forceCrash(null,null);
     }
   }
 
@@ -70,8 +72,8 @@ export class HockeyApp {
    * If you would like to include additional data to include with user feedback, you can call the following API and indicate whether to include a screen shot of the device and/or arbitrary data from your application at the time that the API is called.
    */
   public composeFeedback(attachScreenshot:boolean, data:any): void {
-    if (window['hockeyapp']) {
-      window['hockeyapp'].composeFeedback(null,null,attachScreenshot,data);
+    if (this.window[<any>'hockeyapp']) {
+      this.window[<any>'hockeyapp'].composeFeedback(null,null,attachScreenshot,data);
     }
   }
 
@@ -79,8 +81,8 @@ export class HockeyApp {
    * If you're using HockeyApp to distribute beta builds to your testers, then you'll likely also want to collect feedback from them in addition to viewing crash reports and usage metrics. To do this, simply call the following method in order to display a UI that allows your users to send app feedback directly to you:
    */
   public feedback(): void {
-    if (window['hockeyapp']) {
-      window['hockeyapp'].feedback(null,null);
+    if (this.window[<any>'hockeyapp']) {
+      this.window[<any>'hockeyapp'].feedback(null,null);
     }
   }
 
@@ -89,8 +91,8 @@ export class HockeyApp {
    * @param data A JavaScript object that describes the metadata (i.e. properties and values) that you would like to attach to the next crash report.
    */
   public addMetaData(data:any): void {
-    if (window['hockeyapp']) {
-      window['hockeyapp'].addMetaData(null,null,data);
+    if (this.window[<any>'hockeyapp']) {
+      this.window[<any>'hockeyapp'].addMetaData(null,null,data);
     }
   }
 }

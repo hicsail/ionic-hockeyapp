@@ -1,6 +1,8 @@
 # Ionic-HockeyApp
-Need HockeyApp in your ionic application, add this provider!
+Need HockeyApp in your ionic application, add this package!
 This is an ionic wrapper of the [cordova-plugin-hockeyapp](https://github.com/bitstadium/HockeySDK-Cordova) to make it easier to add [HockeyApp](http://hockeyapp.net/) into your ionic application.
+
+[![NPM](https://nodei.co/npm/ionic-hockeyapp.png)](https://npmjs.org/package/ionic-hockeyapp)
 
 - [Supported Ionic Platforms](#supported-ionic-platforms)
 - [Getting Started](#getting-started)
@@ -11,14 +13,14 @@ This is an ionic wrapper of the [cordova-plugin-hockeyapp](https://github.com/bi
 - [License](#license)
 
 ## Supported Ionic Platforms
-Ionic 2 is fully supported later, the last version of Ionic that was tested on was: `Ionic 3.0.1`
+Ionic 2 & 3 is fully supported, the last version of Ionic that was tested on was: `Ionic 3.0.1`
 
 ## Getting Started
 After you've created your [HockeyApp](http://hockeyapp.net/) account, and registered your app with the service, you can begin integrating into your ionic application.
 
 ### Install the official [HockeyApp plugin](https://github.com/bitstadium/HockeySDK-Cordova) by running this command:
 ```bash
-ionic plugin add cordova plugin add cordova-plugin-hockeyapp@latest
+ionic plugin add cordova-plugin-hockeyapp@latest
 ```
 
 ### Add cordova-plugin-hockeyapp to package.json and confix.xml.
@@ -46,17 +48,14 @@ config.xml
 <plugin name="cordova-plugin-hockeyapp" spec="~2.2.3" />
 ```
 
-### Import hockey-app.ts into the providers folder
-```
-IonicApp
-└── src
-    └── providers
-        └── hockey-app.ts
+### install ionic-hockeyapp
+```bash
+npm install ionic-hockeyapp
 ```
 
 ### Add the HockeyApp provider to your app.modules.ts
 ```ts
-import { HockeyApp } from "../providers/hockey-app";
+import { HockeyApp } from "ionic-hockeyapp";
 
 providers: [
   StatusBar,
@@ -76,7 +75,7 @@ private iosAppId:string = "7ea7b82b9b6e4366a8c8dd57e07b2743";
 
 After following the Getting Started guide. import HockeyApp provider into your class and call HockeyApp.
 ```ts
-import { HockeyApp } from "../../providers/hockey-app";
+import { HockeyApp } from "ionic-hockeyapp";
 
 constructor(..., private hockeyApp:HockeyApp) {
   this.hockeyApp.trackEvent('Hello World');
