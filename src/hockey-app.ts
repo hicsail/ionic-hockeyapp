@@ -5,8 +5,8 @@ import { Platform } from "ionic-angular";
 export class HockeyApp {
 
   //hockeyapp settings
-  private androidAppId:string = "9e49aeddaa96488891f0a46b52b27618";
-  private iosAppId:string = "7ea7b82b9b6e4366a8c8dd57e07b2743";
+  private androidAppId:string;
+  private iosAppId:string;
   private sendAutoUpdates = false;
   private ignoreErrorHeader = false;
   private window:any = window;
@@ -24,7 +24,11 @@ export class HockeyApp {
    * @param loginMode             The mechanism to use in order to authenticate users. NOTE: Only the ANONYMOUS login mode is supported on iOS, and therefore, you can only use the other modes within Android apps. Default - ANONYMOUS
    * @param appSecret             The app secret as provided by the HockeyApp portal. This parameter only needs to be set if you're setting the loginMode parameter to EMAIL_ONLY.
    */
-  public start() {
+  public start(androidAppId:string,iosAppId:string,sendAutoUpdates:boolean,ignoreErrorHeader:boolean) {
+    this.androidAppId = androidAppId;
+    this.iosAppId = iosAppId;
+    this.sendAutoUpdates = sendAutoUpdates;
+    this.ignoreErrorHeader = ignoreErrorHeader;
     if (this.window[<any>'hockeyapp']) {
       let appId:string;
       if (this.platform.is('ios')) {
@@ -35,9 +39,10 @@ export class HockeyApp {
       }
       if (appId) {
         this.window[<any>'hockeyapp'].start(null, null, appId, this.sendAutoUpdates, this.ignoreErrorHeader);
+      } else {
+        console.warn("HockeyApp unable to start, no app id or unsupported platform");
       }
     }
-
   }
 
   /**

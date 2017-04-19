@@ -17,7 +17,7 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
-      this.hockeyapp.start();
+      this.hockeyapp.start("9e49aeddaa96488891f0a46b52b27618","7ea7b82b9b6e4366a8c8dd57e07b2743",false,true);
     });
   }
 }

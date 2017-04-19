@@ -28,7 +28,7 @@ ionic plugin add cordova-plugin-hockeyapp@latest --save
 npm install ionic-hockeyapp --save
 ```
 
-### Add the HockeyApp provider to app.module.ts
+### Add the HockeyApp provider to [app.module.ts](https://github.com/hicsail/ionic-hockeyapp/blob/master/example/src/app/app.module.ts)
 ```ts
 import { HockeyApp } from "ionic-hockeyapp";
 
@@ -37,15 +37,23 @@ providers: [
 ]
 ```
 
-### Finally add your android and ios HockeyApp keys into the provider
-```ts
-private androidAppId:string = "9e49aeddaa96488891f0a46b52b27618";
-private iosAppId:string = "7ea7b82b9b6e4366a8c8dd57e07b2743";
-```
-
 ## How to use
 
-After following the Getting Started guide. import HockeyApp provider into your class and call HockeyApp.
+After following the Getting Started guide. Import HockeyApp provider into your class and call HockeyApp.
+Start the HockeyApp Service in [app.component.ts](https://github.com/hicsail/ionic-hockeyapp/blob/master/example/src/app/app.component.ts)
+```ts
+import { HockeyApp } from "ionic-hockeyapp";
+
+constructor(..., private hockeyapp:HockeyApp) {
+  platform.ready().then(() => {
+    ...
+    this.hockeyapp.start("9e49aeddaa96488891f0a46b52b27618","7ea7b82b9b6e4366a8c8dd57e07b2743",false,true);
+  });
+}
+```
+
+After starting HockeyApp, import into pages, providers, and components and you are good to go.
+
 ```ts
 import { HockeyApp } from "ionic-hockeyapp";
 
