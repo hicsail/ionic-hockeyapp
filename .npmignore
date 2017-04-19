@@ -26,3 +26,4 @@ Desktop.ini
 # example
 example/**
 images/*
+*.tgz
