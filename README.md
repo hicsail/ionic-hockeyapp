@@ -23,7 +23,7 @@ Start by creating a [HockeyApp account](http://hockeyapp.net/) and register your
 ionic plugin add cordova-plugin-hockeyapp@latest --save
 ```
 
-### install ionic-hockeyapp
+### Install ionic-hockeyapp
 ```bash
 npm install ionic-hockeyapp --save
 ```
@@ -65,7 +65,7 @@ Android Screenshot | iOS Screenshot
 Read the [Cordova HockeyApp API Reference](https://github.com/bitstadium/HockeySDK-Cordova#api-reference) for official documentation.
 
 ## Contributing
-Want to make an improvement, fork this repo and submit a pull request!
+If you want to make an improvement, please feel free to fork this repo and submit a pull request.
 
 Possible enhancements:
 - Update HockeyApp start command to add Login Mode.
