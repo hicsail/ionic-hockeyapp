@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { HockeyApp } from "../../providers/hockey-app";
+import { HockeyApp } from "ionic-hockeyapp";
 
 @Component({
   selector: 'page-home',
