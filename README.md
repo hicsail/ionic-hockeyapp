@@ -30,7 +30,7 @@ npm install ionic-hockeyapp --save
 
 ### Add the HockeyApp provider to [app.module.ts](https://github.com/hicsail/ionic-hockeyapp/blob/master/example/src/app/app.module.ts)
 ```ts
-import { HockeyApp } from "ionic-hockeyapp";
+import { HockeyApp } from 'ionic-hockeyapp';
 
 providers: [
   HockeyApp
@@ -42,12 +42,14 @@ providers: [
 After following the Getting Started guide. Import HockeyApp provider into your class and call HockeyApp.
 Start the HockeyApp Service in [app.component.ts](https://github.com/hicsail/ionic-hockeyapp/blob/master/example/src/app/app.component.ts)
 ```ts
-import { HockeyApp } from "ionic-hockeyapp";
+import { HockeyApp } from 'ionic-hockeyapp';
 
 constructor(..., private hockeyapp:HockeyApp) {
   platform.ready().then(() => {
-    ...
-    this.hockeyapp.start("9e49aeddaa96488891f0a46b52b27618","7ea7b82b9b6e4366a8c8dd57e07b2743",false,true);
+    let androidAppId = '9e49aeddaa96488891f0a46b52b27618';
+    let iosAppId = '7ea7b82b9b6e4366a8c8dd57e07b2743';
+
+    this.hockeyapp.start(androidAppId, iosAppId, false, true);
   });
 }
 ```
@@ -55,7 +57,7 @@ constructor(..., private hockeyapp:HockeyApp) {
 After starting HockeyApp, import into pages, providers, and components and you are good to go.
 
 ```ts
-import { HockeyApp } from "ionic-hockeyapp";
+import { HockeyApp } from 'ionic-hockeyapp';
 
 constructor(..., private hockeyApp:HockeyApp) {
   this.hockeyApp.trackEvent('Hello World');
