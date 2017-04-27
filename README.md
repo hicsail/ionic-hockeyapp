@@ -46,10 +46,16 @@ import { HockeyApp } from 'ionic-hockeyapp';
 
 constructor(..., private hockeyapp:HockeyApp) {
   platform.ready().then(() => {
-    let androidAppId = '9e49aeddaa96488891f0a46b52b27618';
+    // The Android ID of the app as provided by the HockeyApp portal. Can be null if for iOS only.
+    let androidAppId = '9e49aeddaa96488891f0a46b52b27618'; 
+    // The iOS ID of the app as provided by the HockeyApp portal. Can be null if for android only.
     let iosAppId = '7ea7b82b9b6e4366a8c8dd57e07b2743';
+    // Specifies whether you would like crash reports to be automatically sent to the HockeyApp server when the end user restarts the app.
+    let autoSendCrashReports = false;
+    // Specifies whether you would like to display the standard dialog when the app is about to crash. This parameter is only relevant on Android.
+    let ignoreCrashDialog = true;
 
-    this.hockeyapp.start(androidAppId, iosAppId, false, true);
+    this.hockeyapp.start(androidAppId, iosAppId, autoSendCrashReports, ignoreCrashDialog);
   });
 }
 ```
