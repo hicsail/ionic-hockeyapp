@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Platform } from 'ionic-angular';
+import { Platform, App } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
@@ -9,15 +9,26 @@ import { HockeyApp } from "ionic-hockeyapp";
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = HomePage;
+  rootPage: any = HomePage;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private hockeyapp:HockeyApp) {
+  constructor(platform: Platform, app:App, statusBar: StatusBar, splashScreen: SplashScreen, hockeyapp: HockeyApp) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
-      this.hockeyapp.start("9e49aeddaa96488891f0a46b52b27618","7ea7b82b9b6e4366a8c8dd57e07b2743",false,true);
+      hockeyapp.start("9e49aeddaa96488891f0a46b52b27618", "7ea7b82b9b6e4366a8c8dd57e07b2743", false, true);
+
+      //So app doesn't close when hockey app activities close
+      //This also has a side effect of unable to close the app when on rootpage, and pressing back button.
+      platform.registerBackButtonAction(() => {
+        let nav = app.getRootNav();
+        if (nav.canGoBack()) {
+          nav.pop();
+        } else {
+          nav.setRoot(this.rootPage);
+        }
+      });
     });
   }
 }
