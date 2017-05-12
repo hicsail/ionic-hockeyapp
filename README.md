@@ -43,11 +43,12 @@ After following the Getting Started guide. Import HockeyApp provider into your c
 Start the HockeyApp Service in [app.component.ts](https://github.com/hicsail/ionic-hockeyapp/blob/master/example/src/app/app.component.ts)
 ```ts
 import { HockeyApp } from 'ionic-hockeyapp';
+import { Platform, App } from 'ionic-angular';
 
-constructor(..., private hockeyapp:HockeyApp) {
+constructor(..., app:App, hockeyapp:HockeyApp) {
   platform.ready().then(() => {
     // The Android ID of the app as provided by the HockeyApp portal. Can be null if for iOS only.
-    let androidAppId = '9e49aeddaa96488891f0a46b52b27618'; 
+    let androidAppId = '9e49aeddaa96488891f0a46b52b27618';
     // The iOS ID of the app as provided by the HockeyApp portal. Can be null if for android only.
     let iosAppId = '7ea7b82b9b6e4366a8c8dd57e07b2743';
     // Specifies whether you would like crash reports to be automatically sent to the HockeyApp server when the end user restarts the app.
@@ -55,7 +56,19 @@ constructor(..., private hockeyapp:HockeyApp) {
     // Specifies whether you would like to display the standard dialog when the app is about to crash. This parameter is only relevant on Android.
     let ignoreCrashDialog = true;
 
-    this.hockeyapp.start(androidAppId, iosAppId, autoSendCrashReports, ignoreCrashDialog);
+    hockeyapp.start(androidAppId, iosAppId, autoSendCrashReports, ignoreCrashDialog);
+
+    //So app doesn't close when hockey app activities close
+    //This also has a side effect of unable to close the app when on the rootPage and using the back button.
+    //Back button will perform as normal on other pages and pop to the previous page.
+    platform.registerBackButtonAction(() => {
+      let nav = app.getRootNav();
+      if (nav.canGoBack()) {
+        nav.pop();
+      } else {
+        nav.setRoot(this.rootPage);
+      }
+    });
   });
 }
 ```

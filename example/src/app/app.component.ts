@@ -20,7 +20,8 @@ export class MyApp {
       hockeyapp.start("9e49aeddaa96488891f0a46b52b27618", "7ea7b82b9b6e4366a8c8dd57e07b2743", false, true);
 
       //So app doesn't close when hockey app activities close
-      //This also has a side effect of unable to close the app when on rootpage, and pressing back button.
+      //This also has a side effect of unable to close the app when on the rootPage and using the back button.
+      //Back button will perform as normal on other pages and pop to the previous page.
       platform.registerBackButtonAction(() => {
         let nav = app.getRootNav();
         if (nav.canGoBack()) {
