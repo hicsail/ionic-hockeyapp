@@ -2,7 +2,7 @@
 Need HockeyApp in your Ionic application, add this package!
 This is an Ionic wrapper of the [cordova-plugin-hockeyapp](https://github.com/bitstadium/HockeySDK-Cordova) to make it easier to add [HockeyApp](http://hockeyapp.net/) into your Ionic application.
 
-[![NPM](https://nodei.co/npm/ionic-hockeyapp.png)](https://npmjs.org/package/ionic-hockeyapp)
+[![NPM](https://nodei.co/npm/ionic-hockeyapp.png?downloads=true&stars=true)](https://nodei.co/npm/ionic-hockeyapp/)
 
 - [Supported Ionic Platforms](#supported-ionic-platforms)
 - [Getting Started](#getting-started)
