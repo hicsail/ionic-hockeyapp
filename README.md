@@ -25,6 +25,7 @@ ionic plugin add cordova-plugin-hockeyapp@latest --save
 
 ### Install ionic-hockeyapp
 ```bash
+npm install -g typings
 npm install ionic-hockeyapp --save
 ```
 
