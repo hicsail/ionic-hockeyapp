@@ -98,7 +98,7 @@ If you want to make an improvement, please feel free to fork this repo and submi
 
 Possible enhancements:
 - Update HockeyApp start command to add Login Mode.
-- ~~Make library promise based~~. Added in v0.1.4
+- ~~Make library promise based~~. Added in v0.1.5
 
 
 ## License
