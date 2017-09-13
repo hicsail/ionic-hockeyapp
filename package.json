@@ -5,7 +5,8 @@
     "lint": "tslint src/**/*.ts",
     "test": "tsc && karma start",
     "prepublish": "tsc",
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "typings": "typings install"
   },
 
   "repository": {
@@ -57,7 +58,8 @@
     "rxjs": "5.1.1",
     "sw-toolbox": "3.4.0",
     "zone.js": "^0.8.4",
-    "typescript": "~2.2.1"
+    "typescript": "~2.2.1",
+    "typings": "^2.1.1"
   },
   "engines": {
     "node": ">=0.8.0"
