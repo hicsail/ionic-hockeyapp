@@ -13,14 +13,14 @@ This is an Ionic wrapper of the [cordova-plugin-hockeyapp](https://github.com/bi
 - [License](#license)
 
 ## Supported Ionic Platforms
-Ionic 2 & 3 are fully supported, the latest version of Ionic that was tested is v3.0.1.
+Ionic 2 & 3 are fully supported, the latest version of Ionic that was tested is v3.6.1.
 
 ## Getting Started
 Start by creating a [HockeyApp account](http://hockeyapp.net/) and register your app with the service.
 
 ### Install the official [HockeyApp plugin](https://github.com/bitstadium/HockeySDK-Cordova) by running this command:
 ```bash
-ionic plugin add cordova-plugin-hockeyapp@latest --save
+ionic cordova plugin add cordova-plugin-hockeyapp@latest
 ```
 
 ### Install ionic-hockeyapp
@@ -98,7 +98,8 @@ If you want to make an improvement, please feel free to fork this repo and submi
 
 Possible enhancements:
 - Update HockeyApp start command to add Login Mode.
-- Make library promise based.
+- ~~Make library promise based~~. Added in v0.1.4
+
 
 ## License
 

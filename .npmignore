@@ -27,3 +27,7 @@ Desktop.ini
 example/**
 images/*
 *.tgz
+
+tsconfig.json
+tslint.json
+typings/*
