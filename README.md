@@ -1,8 +1,13 @@
 # Ionic-HockeyApp
+[![npm](https://img.shields.io/npm/v/ionic-hockeyapp.svg)](https://www.npmjs.com/package/ionic-hockeyapp)
+[![npm](https://img.shields.io/npm/dm/ionic-hockeyapp.svg)](https://nodei.co/npm/ionic-hockeyapp/)
+[![npm](https://img.shields.io/npm/dt/ionic-hockeyapp.svg)](https://nodei.co/npm/ionic-hockeyapp/)
+[![license](https://img.shields.io/npm/l/ionic-hockeyapp.svg)](https://github.com/hicsail/ionic-hockeyapp/blob/master/LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/hicsail/ionic-hockeyapp.svg?style=social&label=Star)](https://github.com/hicsail/ionic-hockeyapp)
+
 Need HockeyApp in your Ionic application, add this package!
 This is an Ionic wrapper of the [cordova-plugin-hockeyapp](https://github.com/bitstadium/HockeySDK-Cordova) to make it easier to add [HockeyApp](http://hockeyapp.net/) into your Ionic application.
 
-[![NPM](https://nodei.co/npm/ionic-hockeyapp.png?downloads=true&stars=true)](https://nodei.co/npm/ionic-hockeyapp/)
 
 - [Supported Ionic Platforms](#supported-ionic-platforms)
 - [Getting Started](#getting-started)
@@ -98,7 +103,8 @@ If you want to make an improvement, please feel free to fork this repo and submi
 
 Possible enhancements:
 - Update HockeyApp start command to add Login Mode.
-- ~~Make library promise based~~. Added in v0.1.5
+- Add Unit Tests
+- ~~Make library promise based~~. Added in v0.1.6
 
 
 ## License
