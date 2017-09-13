@@ -1,17 +1,16 @@
 import { Component } from '@angular/core';
-import { Platform, App } from 'ionic-angular';
+import { App, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { HomePage } from '../pages/home/home';
-import { HockeyApp } from "ionic-hockeyapp";
+import { HockeyApp } from 'ionic-hockeyapp';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage: any = HomePage;
+  rootPage:any = 'HomePage';
 
-  constructor(platform: Platform, app:App, statusBar: StatusBar, splashScreen: SplashScreen, hockeyapp: HockeyApp) {
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, app:App, hockeyapp: HockeyApp) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
@@ -33,3 +32,4 @@ export class MyApp {
     });
   }
 }
+
