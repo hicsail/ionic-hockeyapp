@@ -1,8 +1,13 @@
 # Ionic-HockeyApp
+[![npm](https://img.shields.io/npm/v/ionic-hockeyapp.svg)](https://www.npmjs.com/package/ionic-hockeyapp)
+[![npm](https://img.shields.io/npm/dm/ionic-hockeyapp.svg)](https://nodei.co/npm/ionic-hockeyapp/)
+[![npm](https://img.shields.io/npm/dt/ionic-hockeyapp.svg)](https://nodei.co/npm/ionic-hockeyapp/)
+[![license](https://img.shields.io/npm/l/ionic-hockeyapp.svg)](https://github.com/hicsail/ionic-hockeyapp/blob/master/LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/hicsail/ionic-hockeyapp.svg?style=social&label=Star)](https://github.com/hicsail/ionic-hockeyapp)
+
 Need HockeyApp in your Ionic application, add this package!
 This is an Ionic wrapper of the [cordova-plugin-hockeyapp](https://github.com/bitstadium/HockeySDK-Cordova) to make it easier to add [HockeyApp](http://hockeyapp.net/) into your Ionic application.
 
-[![NPM](https://nodei.co/npm/ionic-hockeyapp.png?downloads=true&stars=true)](https://nodei.co/npm/ionic-hockeyapp/)
 
 - [Supported Ionic Platforms](#supported-ionic-platforms)
 - [Getting Started](#getting-started)
@@ -13,14 +18,14 @@ This is an Ionic wrapper of the [cordova-plugin-hockeyapp](https://github.com/bi
 - [License](#license)
 
 ## Supported Ionic Platforms
-Ionic 2 & 3 are fully supported, the latest version of Ionic that was tested is v3.0.1.
+Ionic 2 & 3 are fully supported, the latest version of Ionic that was tested is v3.6.1.
 
 ## Getting Started
 Start by creating a [HockeyApp account](http://hockeyapp.net/) and register your app with the service.
 
 ### Install the official [HockeyApp plugin](https://github.com/bitstadium/HockeySDK-Cordova) by running this command:
 ```bash
-ionic plugin add cordova-plugin-hockeyapp@latest --save
+ionic cordova plugin add cordova-plugin-hockeyapp@latest
 ```
 
 ### Install ionic-hockeyapp
@@ -98,7 +103,9 @@ If you want to make an improvement, please feel free to fork this repo and submi
 
 Possible enhancements:
 - Update HockeyApp start command to add Login Mode.
-- Make library promise based.
+- Add Unit Tests
+- ~~Make library promise based~~. Added in v0.1.6
+
 
 ## License
 

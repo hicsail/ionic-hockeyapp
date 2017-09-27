@@ -1,25 +1,26 @@
 {
   "name": "ionic-hockeyapp",
-  "version": "0.1.3",
+  "version": "0.1.8",
   "scripts": {
     "lint": "tslint src/**/*.ts",
     "test": "tsc && karma start",
-    "postinstall": "typings install",
     "prepublish": "tsc",
     "tsc": "tsc",
-    "typings": "typings"
+    "typings": "typings install"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/hicsail/ionic-hockeyapp"
   },
   "author": {
-    "name": "SAIL BU",
-    "email": "hicsail@bu.edu"
+    "name": "Boston University Software & Application Innovation Lab",
+    "email": "hicsail@bu.edu",
+    "url": "http://sail.bu.edu/"
   },
   "keywords": [
     "ionic",
     "ionic2",
+    "ionic3",
     "ionic-framework",
     "ios",
     "android",
