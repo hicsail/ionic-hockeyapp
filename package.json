@@ -1,6 +1,6 @@
 {
   "name": "ionic-hockeyapp",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "scripts": {
     "lint": "tslint src/**/*.ts",
     "test": "tsc && karma start",
@@ -8,7 +8,6 @@
     "tsc": "tsc",
     "typings": "typings install"
   },
-
   "repository": {
     "type": "git",
     "url": "https://github.com/hicsail/ionic-hockeyapp"
@@ -39,6 +38,7 @@
     "url": "https://github.com/hicsail/ionic-hockeyapp/issues"
   },
   "main": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
   "dependencies": {},
   "devDependencies": {
     "@angular/common": "4.0.0",
@@ -58,8 +58,7 @@
     "rxjs": "5.1.1",
     "sw-toolbox": "3.4.0",
     "zone.js": "^0.8.4",
-    "typescript": "~2.2.1",
-    "typings": "^2.1.1"
+    "typescript": "~2.2.1"
   },
   "engines": {
     "node": ">=0.8.0"
