@@ -39,8 +39,7 @@
   },
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "@angular/common": "4.0.0",
     "@angular/compiler": "4.0.0",
