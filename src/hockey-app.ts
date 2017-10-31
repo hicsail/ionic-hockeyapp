@@ -190,4 +190,52 @@ export class HockeyApp {
       }
     });
   }
+
+  /**
+   * Set the user's e-mail address.
+   * @param userEmail      The user's e-mail address.
+   */
+  public setUserEmail(userEmail: string): Promise<any> {
+    return new Promise((resolve, reject) => {
+      if (this.window[<any>'hockeyapp']) {
+        this.window[<any>'hockeyapp'].setUserEmail((success: any) => {
+          resolve(success);
+        }, (err: any) => {
+          reject(err);
+        }, userEmail);
+      } else {
+        if (this.platform.is('core') || this.platform.is('mobileweb')) {
+          console.warn('HockeyApp unable to set the users e-mail address on this platform')
+          resolve();
+        } else {
+          reject('HockeyApp is not found, please make sure the cordova-hockeyapp-plugin is installed and on a supported platform');
+        }
+      }
+    });
+
+  }
+
+  /**
+   * Set the user's name.
+   * @param userName      The user's name.
+   */
+  public setUserName(userName: string): Promise<any> {
+    return new Promise((resolve, reject) => {
+      if (this.window[<any>'hockeyapp']) {
+        this.window[<any>'hockeyapp'].setUserName((success: any) => {
+          resolve(success);
+        }, (err: any) => {
+          reject(err);
+        }, userName);
+      } else {
+        if (this.platform.is('core') || this.platform.is('mobileweb')) {
+          console.warn('HockeyApp unable to set the users name on this platform')
+          resolve();
+        } else {
+          reject('HockeyApp is not found, please make sure the cordova-hockeyapp-plugin is installed and on a supported platform');
+        }
+      }
+    });
+
+  }
 }
