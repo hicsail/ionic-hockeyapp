@@ -9,6 +9,7 @@ export class HockeyApp {
   private iosAppId:string;
   private sendAutoUpdates = false;
   private ignoreErrorHeader = false;
+  private checkForUpdatesMode:string;
   private window:any = window;
   //private loginMode = this.window[<any>'hockeyapp'].ANONYMOUS;
   //private androidAppSecret = ''; //if  loginMode is email only. iOS only works with anonymous
@@ -21,13 +22,15 @@ export class HockeyApp {
    * @param iosAppId              The iOS ID of the app as provided by the HockeyApp portal.
    * @param autoSendCrashReports  Specifies whether you would like crash reports to be automatically sent to the HockeyApp server when the end user restarts the app. Default - false
    * @param ignoreDefaultHandler  Specifies whether you would like to display the standard dialog when the app is about to crash. This parameter is only relevant on Android. Default - false
+   * @param checkForUpdatesMode   The option of whether to check for updates when the app starts (CHECK_ON_STARTUP) or manually (CHECK_MANUALLY) via checkHockeyAppUpdates() method. Default - CHECK_MANUALLY
    */
-  public start(androidAppId:string,iosAppId:string,sendAutoUpdates:boolean,ignoreErrorHeader:boolean): Promise<any> {
+  public start(androidAppId:string,iosAppId:string,sendAutoUpdates:boolean,ignoreErrorHeader:boolean, checkForUpdatesMode?:string): Promise<any> {
     return new Promise((resolve, reject) => {
       this.androidAppId = androidAppId;
       this.iosAppId = iosAppId;
       this.sendAutoUpdates = sendAutoUpdates;
       this.ignoreErrorHeader = ignoreErrorHeader;
+      this.checkForUpdatesMode = checkForUpdatesMode || 'CHECK_MANUALLY';
       if (this.window[<any>'hockeyapp']) {
         let appId: string;
         if (this.platform.is('ios')) {
@@ -41,7 +44,7 @@ export class HockeyApp {
             resolve(success);
           }, (err:any) => {
             reject(err);
-          }, appId, this.sendAutoUpdates, this.ignoreErrorHeader);
+          }, appId, this.sendAutoUpdates, this.ignoreErrorHeader, this.window[<any>'hockeyapp'].checkForUpdateMode[this.checkForUpdatesMode]);
         } else {
           reject('HockeyApp unable to start, no app id or unsupported platform');
         }
