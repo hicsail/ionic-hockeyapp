@@ -1,6 +1,6 @@
 {
   "name": "ionic-hockeyapp",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "scripts": {
     "lint": "tslint src/**/*.ts",
     "test": "tsc && karma start",
